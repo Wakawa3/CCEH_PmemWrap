@@ -1,3 +1,7 @@
+extern "C" {
+#include "libpmem.h"
+#include "libpmemobj.h"
+}
 #ifndef UTIL_HASH_H_
 #define UTIL_HASH_H_
 
