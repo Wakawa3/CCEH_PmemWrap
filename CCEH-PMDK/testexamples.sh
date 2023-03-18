@@ -15,15 +15,6 @@ if [[ ${BIN} =~ ^(multi_threaded_cceh|multi_threaded_cceh_CoW)$ ]]; then
     export PMEMWRAP_MULTITHREAD=MULTI
 fi
 
-patch Makefile < ${TEST_ROOT}/patch/MakefilePatch/CCEH-PMDK.patch
-cd src
-sed -i '1s/^/\}\n/' *.h
-sed -i '1s/^/#include "libpmemobj.h"\n/' *.h
-sed -i '1s/^/#include "libpmem.h"\n/' *.h
-sed -i '1s/^/extern "C" \{\n/' *.h
-cp ${PMEMWRAP_ROOT}/libpmem.h ${TEST_ROOT}/src
-cp ${PMEMWRAP_ROOT}/libpmemobj.h ${TEST_ROOT}/src
-
 cd ${TEST_ROOT}
 make clean -j$(nproc)
 make -j$(nproc)
@@ -64,14 +55,3 @@ do
     echo "" >> ${OUT_LOC}/${BIN}_abort.txt
     echo "" >> ${OUT_LOC}/${BIN}_error.txt
 done
-
-make clean -j$(nproc)
-
-rm ${TEST_ROOT}/src/libpmem.h
-rm ${TEST_ROOT}/src/libpmemobj.h
-
-cd ${TEST_ROOT}/src
-sed -i '1,4d' *.h
-
-cd ${TEST_ROOT}
-patch -R Makefile < ${TEST_ROOT}/patch/MakefilePatch/CCEH-PMDK.patch
