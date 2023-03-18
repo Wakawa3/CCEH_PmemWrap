@@ -8,6 +8,8 @@ COPYFILE=${PMIMAGE}_flushed
 #BIN=single_threaded_cceh
 BIN=$1
 
+TEST_MEMCPY_TYPE=RAND_MEMCPY
+
 export PMEMWRAP_MULTITHREAD=SINGLE
 
 if [[ ${BIN} =~ ^(multi_threaded_cceh|multi_threaded_cceh_CoW)$ ]]; then
@@ -28,9 +30,9 @@ ${TEST_ROOT}/bin/${BIN} ${PMIMAGE} 20 ${THREAD_OPT}
 export PMEMWRAP_WRITECOUNTFILE=ADD
 export PMEMWRAP_ABORTCOUNT_LOOP=20
 
-OUTPUT_TEXT=${OUT_LOC}/${BIN}_output.txt
-ABORT_TEXT=${OUT_LOC}/${BIN}_abort.txt
-ERROR_TEXT=${OUT_LOC}/${BIN}_error.txt
+OUTPUT_TEXT=${OUT_LOC}/${BIN}_${TEST_MEMCPY_TYPE}_output.txt
+ABORT_TEXT=${OUT_LOC}/${BIN}_${TEST_MEMCPY_TYPE}_abort.txt
+ERROR_TEXT=${OUT_LOC}/${BIN}_${TEST_MEMCPY_TYPE}_error.txt
 
 echo "" > ${OUTPUT_TEXT}
 echo "" > ${ABORT_TEXT}
@@ -44,7 +46,7 @@ do
     echo "${i}" >> ${ERROR_TEXT}
     export PMEMWRAP_ABORT=1
     export PMEMWRAP_SEED=${i}
-    export PMEMWRAP_MEMCPY=NO_MEMCPY
+    export PMEMWRAP_MEMCPY=${TEST_MEMCPY_TYPE}
     ${TEST_ROOT}/bin/${BIN} ${PMIMAGE} 20 ${THREAD_OPT} >> ${OUTPUT_TEXT} 2>> ${ABORT_TEXT}
     ${PMEMWRAP_ROOT}/PmemWrap_memcpy.out ${PMIMAGE} ${COPYFILE}
 #  >> ${OUT_LOC}/${BIN}_memcpy.txt
