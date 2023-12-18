@@ -1,0 +1,2703 @@
+
+citest_1
+pre-failure
+=================================================================
+==1005674==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f71bffff820 at pc 0x55f34188921f bp 0x7fff535575b0 sp 0x7fff535575a0
+READ of size 4 at 0x7f71bffff820 thread T0
+    #0 0x55f34188921e in clear_cache() src/test.cpp:25
+    #1 0x55f341889f76 in main src/test.cpp:118
+    #2 0x7f770dc88082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55f341888bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f71bffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f717ffff800,0x7f71bffff800)
+allocated by thread T0 here:
+    #0 0x7f770e6ba357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55f3418890cd in clear_cache() src/test.cpp:19
+    #2 0x55f341889f76 in main src/test.cpp:118
+    #3 0x7f770dc88082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0feeb7ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feeb7ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feeb7ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feeb7ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feeb7ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0feeb7ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0feeb7ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feeb7ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feeb7ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feeb7ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feeb7ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x656b
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/test.cpp, line: 205, rand_set_count: 1
+
+post_failure
+=================================================================
+==1005730==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fa8bffff820 at pc 0x561f9881221f bp 0x7fffd09f6bd0 sp 0x7fffd09f6bc0
+READ of size 4 at 0x7fa8bffff820 thread T0
+    #0 0x561f9881221e in clear_cache() src/test.cpp:25
+    #1 0x561f98812f76 in main src/test.cpp:118
+    #2 0x7fab5505e082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x561f98811bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fa8bffff820 is located 32 bytes to the right of 1073741824-byte region [0x7fa87ffff800,0x7fa8bffff800)
+allocated by thread T0 here:
+    #0 0x7fab55a90357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x561f988120cd in clear_cache() src/test.cpp:19
+    #2 0x561f98812f76 in main src/test.cpp:118
+    #3 0x7fab5505e082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff597ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff597ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff597ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff597ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff597ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff597ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff597ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff597ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff597ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff597ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff597ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1005730==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7fab55a90357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x561f988129f0 in main src/test.cpp:85
+    #2 0x7fab5505e082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_2
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9b2d
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 182, rand_set_count: 1
+
+post_failure
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1005818==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000018 (pc 0x5617af1001f4 bp 0x7fff2a826110 sp 0x7fff2a826010 T0)
+==1005818==The signal is caused by a READ memory access.
+==1005818==Hint: address points to the zero page.
+    #0 0x5617af1001f4 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:476
+    #1 0x5617af0f696f in main src/test.cpp:74
+    #2 0x7f19c215f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5617af0f5bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:476 in CCEH::Recovery(pmemobjpool*)
+==1005818==ABORTING
+
+timeout return 0
+
+
+citest_3
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9d67
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 184, rand_set_count: 2
+
+post_failure
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1005884==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x563ef29f6c21 bp 0x7ffdc4f02f40 sp 0x7ffdc4f02e40 T0)
+==1005884==The signal is caused by a READ memory access.
+==1005884==Hint: address points to the zero page.
+    #0 0x563ef29f6c21 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:478
+    #1 0x563ef29ed96f in main src/test.cpp:74
+    #2 0x7fb811052082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x563ef29ecbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:478 in CCEH::Recovery(pmemobjpool*)
+==1005884==ABORTING
+
+timeout return 0
+
+
+citest_4
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9e38
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 187, rand_set_count: 1937
+
+post_failure
+=================================================================
+==1005961==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f497ffff820 at pc 0x55b44ecd921f bp 0x7fff1978a900 sp 0x7fff1978a8f0
+READ of size 4 at 0x7f497ffff820 thread T0
+    #0 0x55b44ecd921e in clear_cache() src/test.cpp:25
+    #1 0x55b44ecd9f76 in main src/test.cpp:118
+    #2 0x7f4c2a89f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55b44ecd8bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f497ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f493ffff800,0x7f497ffff800)
+allocated by thread T0 here:
+    #0 0x7f4c2b2d1357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55b44ecd90cd in clear_cache() src/test.cpp:19
+    #2 0x55b44ecd9f76 in main src/test.cpp:118
+    #3 0x7f4c2a89f082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe9afff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe9afff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe9afff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe9afff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe9afff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe9afff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe9afff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe9afff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe9afff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe9afff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe9afff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+timeout return 0
+
+
+citest_5
+pre-failure
+=================================================================
+==1006005==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fb1fffff80c at pc 0x55708284221f bp 0x7fffb0b6b380 sp 0x7fffb0b6b370
+READ of size 4 at 0x7fb1fffff80c thread T0
+    #0 0x55708284221e in clear_cache() src/test.cpp:25
+    #1 0x557082842bf5 in main src/test.cpp:104
+    #2 0x7fb74fd95082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x557082841bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fb1fffff80c is located 12 bytes to the right of 1073741824-byte region [0x7fb1bffff800,0x7fb1fffff800)
+allocated by thread T0 here:
+    #0 0x7fb7507c7357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5570828420cd in clear_cache() src/test.cpp:19
+    #2 0x557082842bf5 in main src/test.cpp:104
+    #3 0x7fb74fd95082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff6bfff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff6bfff7f00: fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xafe9
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 232, rand_set_count: 16392
+
+post_failure
+
+timeout return 0
+
+
+citest_6
+pre-failure
+=================================================================
+==1006104==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fb47ffff808 at pc 0x55ece239a21f bp 0x7fffa37b43e0 sp 0x7fffa37b43d0
+READ of size 4 at 0x7fb47ffff808 thread T0
+    #0 0x55ece239a21e in clear_cache() src/test.cpp:25
+    #1 0x55ece239abf5 in main src/test.cpp:104
+    #2 0x7fb9d1d4e082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ece2399bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fb47ffff808 is located 8 bytes to the right of 1073741824-byte region [0x7fb43ffff800,0x7fb47ffff800)
+allocated by thread T0 here:
+    #0 0x7fb9d2780357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55ece239a0cd in clear_cache() src/test.cpp:19
+    #2 0x55ece239abf5 in main src/test.cpp:104
+    #3 0x7fb9d1d4e082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff70fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff70fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff70fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff70fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff70fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff70fff7f00: fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff70fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff70fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff70fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff70fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff70fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xae60
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 229, rand_set_count: 16405
+
+post_failure
+=================================================================
+==1006159==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f0390442460 at pc 0x55ed70958e64 bp 0x7ffda71e0a40 sp 0x7ffda71e0a30
+READ of size 16 at 0x7f0390442460 thread T0
+    #0 0x55ed70958e63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55ed7094f96f in main src/test.cpp:74
+    #2 0x7f05e601f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ed7094ebad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7f0390442460 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0fe0f2080430: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe0f2080440: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe0f2080450: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe0f2080460: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe0f2080470: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe0f2080480: 00 00 00 00 00 00 00 00 00 00 00 00[fa]fa fd fd
+  0x0fe0f2080490: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe0f20804a0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe0f20804b0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe0f20804c0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe0f20804d0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1006159==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x55ed70958e9d bp 0x7ffda71e0b50 sp 0x7ffda71e0a50 T0)
+==1006159==The signal is caused by a READ memory access.
+    #0 0x55ed70958e9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55ed7094f96f in main src/test.cpp:74
+    #2 0x7f05e601f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ed7094ebad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1006159==ABORTING
+
+timeout return 0
+
+
+citest_7
+pre-failure
+=================================================================
+==1006187==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f8abffff810 at pc 0x559ea87dc21f bp 0x7ffeec331fc0 sp 0x7ffeec331fb0
+READ of size 4 at 0x7f8abffff810 thread T0
+    #0 0x559ea87dc21e in clear_cache() src/test.cpp:25
+    #1 0x559ea87dcbf5 in main src/test.cpp:104
+    #2 0x7f90357c4082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x559ea87dbbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f8abffff810 is located 16 bytes to the right of 1073741824-byte region [0x7f8a7ffff800,0x7f8abffff800)
+allocated by thread T0 here:
+    #0 0x7f90361f6357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x559ea87dc0cd in clear_cache() src/test.cpp:19
+    #2 0x559ea87dcbf5 in main src/test.cpp:104
+    #3 0x7f90357c4082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff1d7ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff1d7ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff1d7ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff1d7ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff1d7ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff1d7ff7f00: fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff1d7ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff1d7ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff1d7ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff1d7ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff1d7ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006187==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f90361f6357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x559ea87dc9f0 in main src/test.cpp:85
+    #2 0x7f90357c4082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1006211==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f93bffff820 at pc 0x561c56dd921f bp 0x7ffecf24e620 sp 0x7ffecf24e610
+READ of size 4 at 0x7f93bffff820 thread T0
+    #0 0x561c56dd921e in clear_cache() src/test.cpp:25
+    #1 0x561c56dd9f76 in main src/test.cpp:118
+    #2 0x7f9648e19082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x561c56dd8bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f93bffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f937ffff800,0x7f93bffff800)
+allocated by thread T0 here:
+    #0 0x7f964984b357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x561c56dd90cd in clear_cache() src/test.cpp:19
+    #2 0x561c56dd9f76 in main src/test.cpp:118
+    #3 0x7f9648e19082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff2f7ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2f7ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2f7ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2f7ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2f7ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff2f7ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2f7ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2f7ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2f7ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2f7ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2f7ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006211==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f964984b357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x561c56dd99f0 in main src/test.cpp:85
+    #2 0x7f9648e19082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_8
+pre-failure
+=================================================================
+==1006263==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f757ffff804 at pc 0x5606dc15521f bp 0x7fff807ddb90 sp 0x7fff807ddb80
+READ of size 4 at 0x7f757ffff804 thread T0
+    #0 0x5606dc15521e in clear_cache() src/test.cpp:25
+    #1 0x5606dc155bf5 in main src/test.cpp:104
+    #2 0x7f7ada3ab082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5606dc154bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f757ffff804 is located 4 bytes to the right of 1073741824-byte region [0x7f753ffff800,0x7f757ffff800)
+allocated by thread T0 here:
+    #0 0x7f7adaddd357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5606dc1550cd in clear_cache() src/test.cpp:19
+    #2 0x5606dc155bf5 in main src/test.cpp:104
+    #3 0x7f7ada3ab082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fef2fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fef2fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fef2fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fef2fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fef2fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fef2fff7f00:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fef2fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fef2fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fef2fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fef2fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fef2fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006263==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f7adaddd357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5606dc1559f0 in main src/test.cpp:85
+    #2 0x7f7ada3ab082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1006287==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f5d7ffff820 at pc 0x55d2874c421f bp 0x7fff2180c2a0 sp 0x7fff2180c290
+READ of size 4 at 0x7f5d7ffff820 thread T0
+    #0 0x55d2874c421e in clear_cache() src/test.cpp:25
+    #1 0x55d2874c4f76 in main src/test.cpp:118
+    #2 0x7f60310f4082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55d2874c3bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f5d7ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f5d3ffff800,0x7f5d7ffff800)
+allocated by thread T0 here:
+    #0 0x7f6031b26357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55d2874c40cd in clear_cache() src/test.cpp:19
+    #2 0x55d2874c4f76 in main src/test.cpp:118
+    #3 0x7f60310f4082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fec2fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec2fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec2fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec2fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec2fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fec2fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec2fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec2fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec2fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec2fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec2fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006287==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f6031b26357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55d2874c49f0 in main src/test.cpp:85
+    #2 0x7f60310f4082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_9
+pre-failure
+=================================================================
+==1006340==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f5bfffff83c at pc 0x5589fa91f21f bp 0x7ffc0f10c550 sp 0x7ffc0f10c540
+READ of size 4 at 0x7f5bfffff83c thread T0
+    #0 0x5589fa91f21e in clear_cache() src/test.cpp:25
+    #1 0x5589fa91fbf5 in main src/test.cpp:104
+    #2 0x7f617cb9a082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5589fa91ebad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f5bfffff83c is located 60 bytes to the right of 1073741824-byte region [0x7f5bbffff800,0x7f5bfffff800)
+allocated by thread T0 here:
+    #0 0x7f617d5cc357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5589fa91f0cd in clear_cache() src/test.cpp:19
+    #2 0x5589fa91fbf5 in main src/test.cpp:104
+    #3 0x7f617cb9a082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0febffff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0febffff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0febffff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0febffff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0febffff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0febffff7f00: fa fa fa fa fa fa fa[fa]fa fa fa fa fa fa fa fa
+  0x0febffff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0febffff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0febffff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0febffff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0febffff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006340==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f617d5cc357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5589fa91f9f0 in main src/test.cpp:85
+    #2 0x7f617cb9a082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1006363==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f3e7ffff820 at pc 0x55ea353c821f bp 0x7ffdde9ebd30 sp 0x7ffdde9ebd20
+READ of size 4 at 0x7f3e7ffff820 thread T0
+    #0 0x55ea353c821e in clear_cache() src/test.cpp:25
+    #1 0x55ea353c8f76 in main src/test.cpp:118
+    #2 0x7f4109520082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ea353c7bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f3e7ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f3e3ffff800,0x7f3e7ffff800)
+allocated by thread T0 here:
+    #0 0x7f4109f52357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55ea353c80cd in clear_cache() src/test.cpp:19
+    #2 0x55ea353c8f76 in main src/test.cpp:118
+    #3 0x7f4109520082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe84fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe84fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe84fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe84fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe84fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe84fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe84fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe84fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe84fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe84fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe84fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1006363==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f4109f52357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55ea353c89f0 in main src/test.cpp:85
+    #2 0x7f4109520082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_10
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9b2d
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 182, rand_set_count: 1
+
+post_failure
+=================================================================
+==1006467==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7feb7ffff820 at pc 0x55f23db9a21f bp 0x7fffdacc4610 sp 0x7fffdacc4600
+READ of size 4 at 0x7feb7ffff820 thread T0
+    #0 0x55f23db9a21e in clear_cache() src/test.cpp:25
+    #1 0x55f23db9af76 in main src/test.cpp:118
+    #2 0x7fee1dc4f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55f23db99bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7feb7ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7feb3ffff800,0x7feb7ffff800)
+allocated by thread T0 here:
+    #0 0x7fee1e681357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55f23db9a0cd in clear_cache() src/test.cpp:19
+    #2 0x55f23db9af76 in main src/test.cpp:118
+    #3 0x7fee1dc4f082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ffdefff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffdefff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffdefff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffdefff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffdefff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ffdefff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffdefff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffdefff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffdefff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffdefff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffdefff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1006467==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x55f23dba3076 bp 0x7fffdacc4640 sp 0x7fffdacc4490 T0)
+==1006467==The signal is caused by a READ memory access.
+==1006467==Hint: address points to the zero page.
+    #0 0x55f23dba3076 in CCEH::Get(unsigned long&) src/CCEH.cpp:413
+    #1 0x55f23db9b073 in main src/test.cpp:123
+    #2 0x7fee1dc4f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55f23db99bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:413 in CCEH::Get(unsigned long&)
+==1006467==ABORTING
+
+timeout return 0
+
+
+citest_11
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9d67
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 184, rand_set_count: 2
+
+post_failure
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1006980==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x56422f38bc21 bp 0x7ffdb9a4f7f0 sp 0x7ffdb9a4f6f0 T0)
+==1006980==The signal is caused by a READ memory access.
+==1006980==Hint: address points to the zero page.
+    #0 0x56422f38bc21 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:478
+    #1 0x56422f38296f in main src/test.cpp:74
+    #2 0x7ff8fe0d7082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x56422f381bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:478 in CCEH::Recovery(pmemobjpool*)
+==1006980==ABORTING
+
+timeout return 0
+
+
+citest_12
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9e38
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 187, rand_set_count: 10020
+
+post_failure
+=================================================================
+==1007079==ERROR: AddressSanitizer: heap-use-after-free on address 0x7f3810442480 at pc 0x55a380d17e64 bp 0x7ffd6e10ed10 sp 0x7ffd6e10ed00
+READ of size 16 at 0x7f3810442480 thread T0
+    #0 0x55a380d17e63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55a380d0e96f in main src/test.cpp:74
+    #2 0x7f3a72c4a082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55a380d0dbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7f3810442480 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-use-after-free src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0fe782080440: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe782080450: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe782080460: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe782080470: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe782080480: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fd fd
+=>0x0fe782080490:[fd]fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe7820804a0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe7820804b0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe7820804c0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe7820804d0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fe7820804e0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1007079==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x55a380d17e9d bp 0x7ffd6e10ee20 sp 0x7ffd6e10ed20 T0)
+==1007079==The signal is caused by a READ memory access.
+    #0 0x55a380d17e9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55a380d0e96f in main src/test.cpp:74
+    #2 0x7f3a72c4a082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55a380d0dbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1007079==ABORTING
+
+timeout return 0
+
+
+citest_13
+pre-failure
+=================================================================
+==1007119==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7ff3fffff804 at pc 0x5578f7cac21f bp 0x7ffc4a0bef60 sp 0x7ffc4a0bef50
+READ of size 4 at 0x7ff3fffff804 thread T0
+    #0 0x5578f7cac21e in clear_cache() src/test.cpp:25
+    #1 0x5578f7cacbf5 in main src/test.cpp:104
+    #2 0x7ff9515f2082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5578f7cabbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7ff3fffff804 is located 4 bytes to the right of 1073741824-byte region [0x7ff3bffff800,0x7ff3fffff800)
+allocated by thread T0 here:
+    #0 0x7ff952024357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5578f7cac0cd in clear_cache() src/test.cpp:19
+    #2 0x5578f7cacbf5 in main src/test.cpp:104
+    #3 0x7ff9515f2082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ffeffff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffeffff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffeffff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffeffff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffeffff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ffeffff7f00:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffeffff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffeffff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffeffff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffeffff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffeffff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xae60
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 229, rand_set_count: 16389
+
+post_failure
+=================================================================
+==1007173==ERROR: AddressSanitizer: heap-use-after-free on address 0x7f69904424b0 at pc 0x55d6b340be64 bp 0x7ffd300b9940 sp 0x7ffd300b9930
+READ of size 16 at 0x7f69904424b0 thread T0
+    #0 0x55d6b340be63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55d6b340296f in main src/test.cpp:74
+    #2 0x7f6bdc284082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55d6b3401bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7f69904424b0 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-use-after-free src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0fedb2080440: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fedb2080450: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fedb2080460: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fedb2080470: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fedb2080480: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fd fd
+=>0x0fedb2080490: fd fd fd fd fd fd[fd]fd fd fd fd fd fd fd fd fd
+  0x0fedb20804a0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fedb20804b0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fedb20804c0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fedb20804d0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fedb20804e0: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1007173==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x55d6b340be9d bp 0x7ffd300b9a50 sp 0x7ffd300b9950 T0)
+==1007173==The signal is caused by a READ memory access.
+    #0 0x55d6b340be9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55d6b340296f in main src/test.cpp:74
+    #2 0x7f6bdc284082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55d6b3401bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1007173==ABORTING
+
+timeout return 0
+
+
+citest_14
+pre-failure
+=================================================================
+==1007217==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f2b7ffff838 at pc 0x563ce390121f bp 0x7ffca7bcea80 sp 0x7ffca7bcea70
+READ of size 4 at 0x7f2b7ffff838 thread T0
+    #0 0x563ce390121e in clear_cache() src/test.cpp:25
+    #1 0x563ce3901bf5 in main src/test.cpp:104
+    #2 0x7f30da478082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x563ce3900bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f2b7ffff838 is located 56 bytes to the right of 1073741824-byte region [0x7f2b3ffff800,0x7f2b7ffff800)
+allocated by thread T0 here:
+    #0 0x7f30daeaa357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x563ce39010cd in clear_cache() src/test.cpp:19
+    #2 0x563ce3901bf5 in main src/test.cpp:104
+    #3 0x7f30da478082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe5efff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe5efff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe5efff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe5efff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe5efff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe5efff7f00: fa fa fa fa fa fa fa[fa]fa fa fa fa fa fa fa fa
+  0x0fe5efff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe5efff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe5efff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe5efff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe5efff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xafe9
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 232, rand_set_count: 16418
+
+post_failure
+=================================================================
+==1007270==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f97bffff820 at pc 0x5612de1c721f bp 0x7ffcdae1fb90 sp 0x7ffcdae1fb80
+READ of size 4 at 0x7f97bffff820 thread T0
+    #0 0x5612de1c721e in clear_cache() src/test.cpp:25
+    #1 0x5612de1c7f76 in main src/test.cpp:118
+    #2 0x7f9a63365082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5612de1c6bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f97bffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f977ffff800,0x7f97bffff800)
+allocated by thread T0 here:
+    #0 0x7f9a63d97357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5612de1c70cd in clear_cache() src/test.cpp:19
+    #2 0x5612de1c7f76 in main src/test.cpp:118
+    #3 0x7f9a63365082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff377ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff377ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff377ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff377ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff377ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff377ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff377ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff377ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff377ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff377ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff377ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1007270==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f9a63d97357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5612de1c79f0 in main src/test.cpp:85
+    #2 0x7f9a63365082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_15
+pre-failure
+=================================================================
+==1007487==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fc8bffff828 at pc 0x55b93b6b021f bp 0x7ffdc52b9ae0 sp 0x7ffdc52b9ad0
+READ of size 4 at 0x7fc8bffff828 thread T0
+    #0 0x55b93b6b021e in clear_cache() src/test.cpp:25
+    #1 0x55b93b6b0bf5 in main src/test.cpp:104
+    #2 0x7fce2b9dc082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55b93b6afbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fc8bffff828 is located 40 bytes to the right of 1073741824-byte region [0x7fc87ffff800,0x7fc8bffff800)
+allocated by thread T0 here:
+    #0 0x7fce2c40e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55b93b6b00cd in clear_cache() src/test.cpp:19
+    #2 0x55b93b6b0bf5 in main src/test.cpp:104
+    #3 0x7fce2b9dc082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff997ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff997ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff997ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff997ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff997ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff997ff7f00: fa fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa
+  0x0ff997ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff997ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff997ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff997ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff997ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x656b
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/test.cpp, line: 205, rand_set_count: 16427
+
+post_failure
+=================================================================
+==1007693==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fb490402450 at pc 0x5618bb315e64 bp 0x7ffdd9ced150 sp 0x7ffdd9ced140
+READ of size 16 at 0x7fb490402450 thread T0
+    #0 0x5618bb315e63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x5618bb30c96f in main src/test.cpp:74
+    #2 0x7fb701194082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5618bb30bbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7fb490402450 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0ff712078430: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff712078440: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff712078450: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff712078460: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff712078470: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0ff712078480: fd fd fd fd fd fd fd fd fd fd[fa]fa 00 00 00 00
+  0x0ff712078490: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff7120784a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff7120784b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff7120784c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff7120784d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1007693==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x5618bb315e9d bp 0x7ffdd9ced260 sp 0x7ffdd9ced160 T0)
+==1007693==The signal is caused by a READ memory access.
+    #0 0x5618bb315e9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x5618bb30c96f in main src/test.cpp:74
+    #2 0x7fb701194082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5618bb30bbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1007693==ABORTING
+
+timeout return 0
+
+
+citest_16
+pre-failure
+=================================================================
+==1007744==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f6b3ffff800 at pc 0x55cb674d821f bp 0x7ffe3266d1d0 sp 0x7ffe3266d1c0
+READ of size 4 at 0x7f6b3ffff800 thread T0
+    #0 0x55cb674d821e in clear_cache() src/test.cpp:25
+    #1 0x55cb674d8bf5 in main src/test.cpp:104
+    #2 0x7f70b33dc082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55cb674d7bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f6b3ffff800 is located 0 bytes to the right of 1073741824-byte region [0x7f6afffff800,0x7f6b3ffff800)
+allocated by thread T0 here:
+    #0 0x7f70b3e0e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55cb674d80cd in clear_cache() src/test.cpp:19
+    #2 0x55cb674d8bf5 in main src/test.cpp:104
+    #3 0x7f70b33dc082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fede7ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fede7ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fede7ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fede7ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fede7ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fede7ff7f00:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fede7ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fede7ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fede7ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fede7ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fede7ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1007744==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f70b3e0e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55cb674d89f0 in main src/test.cpp:85
+    #2 0x7f70b33dc082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1007921==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f88fffff820 at pc 0x5611ea40121f bp 0x7ffda072bf40 sp 0x7ffda072bf30
+READ of size 4 at 0x7f88fffff820 thread T0
+    #0 0x5611ea40121e in clear_cache() src/test.cpp:25
+    #1 0x5611ea401f76 in main src/test.cpp:118
+    #2 0x7f8bb24d2082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5611ea400bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f88fffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f88bffff800,0x7f88fffff800)
+allocated by thread T0 here:
+    #0 0x7f8bb2f04357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5611ea4010cd in clear_cache() src/test.cpp:19
+    #2 0x5611ea401f76 in main src/test.cpp:118
+    #3 0x7f8bb24d2082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff19fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff19fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff19fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff19fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff19fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff19fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff19fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff19fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff19fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff19fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff19fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1007921==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bb2f04357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5611ea4019f0 in main src/test.cpp:85
+    #2 0x7f8bb24d2082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_17
+pre-failure
+=================================================================
+==1007994==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fc77ffff860 at pc 0x560ea818e21f bp 0x7ffc50b32b70 sp 0x7ffc50b32b60
+READ of size 4 at 0x7fc77ffff860 thread T0
+    #0 0x560ea818e21e in clear_cache() src/test.cpp:25
+    #1 0x560ea818ebf5 in main src/test.cpp:104
+    #2 0x7fcce26b1082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x560ea818dbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fc77ffff860 is located 96 bytes to the right of 1073741824-byte region [0x7fc73ffff800,0x7fc77ffff800)
+allocated by thread T0 here:
+    #0 0x7fcce30e3357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x560ea818e0cd in clear_cache() src/test.cpp:19
+    #2 0x560ea818ebf5 in main src/test.cpp:104
+    #3 0x7fcce26b1082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff96fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff96fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff96fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff96fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff96fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff96fff7f00: fa fa fa fa fa fa fa fa fa fa fa fa[fa]fa fa fa
+  0x0ff96fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff96fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff96fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff96fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff96fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1007994==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7fcce30e3357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x560ea818e9f0 in main src/test.cpp:85
+    #2 0x7fcce26b1082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1008348==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f283ffff820 at pc 0x55dee3b5221f bp 0x7ffe0a547720 sp 0x7ffe0a547710
+READ of size 4 at 0x7f283ffff820 thread T0
+    #0 0x55dee3b5221e in clear_cache() src/test.cpp:25
+    #1 0x55dee3b52f76 in main src/test.cpp:118
+    #2 0x7f2ad7e27082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55dee3b51bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f283ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f27fffff800,0x7f283ffff800)
+allocated by thread T0 here:
+    #0 0x7f2ad8859357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55dee3b520cd in clear_cache() src/test.cpp:19
+    #2 0x55dee3b52f76 in main src/test.cpp:118
+    #3 0x7f2ad7e27082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe587ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe587ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe587ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe587ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe587ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe587ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe587ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe587ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe587ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe587ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe587ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1008348==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f2ad8859357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55dee3b529f0 in main src/test.cpp:85
+    #2 0x7f2ad7e27082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_18
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9b2d
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 182, rand_set_count: 1
+
+post_failure
+=================================================================
+==1008791==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f917ffff820 at pc 0x558dfa04321f bp 0x7fffd1199270 sp 0x7fffd1199260
+READ of size 4 at 0x7f917ffff820 thread T0
+    #0 0x558dfa04321e in clear_cache() src/test.cpp:25
+    #1 0x558dfa043f76 in main src/test.cpp:118
+    #2 0x7f943d195082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x558dfa042bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f917ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f913ffff800,0x7f917ffff800)
+allocated by thread T0 here:
+    #0 0x7f943dbc7357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x558dfa0430cd in clear_cache() src/test.cpp:19
+    #2 0x558dfa043f76 in main src/test.cpp:118
+    #3 0x7f943d195082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff2afff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2afff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2afff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2afff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff2afff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff2afff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2afff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2afff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2afff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2afff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff2afff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1008791==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x558dfa04c076 bp 0x7fffd11992a0 sp 0x7fffd11990f0 T0)
+==1008791==The signal is caused by a READ memory access.
+==1008791==Hint: address points to the zero page.
+    #0 0x558dfa04c076 in CCEH::Get(unsigned long&) src/CCEH.cpp:413
+    #1 0x558dfa044073 in main src/test.cpp:123
+    #2 0x7f943d195082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x558dfa042bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:413 in CCEH::Get(unsigned long&)
+==1008791==ABORTING
+
+timeout return 0
+
+
+citest_19
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9e38
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 187, rand_set_count: 300
+
+post_failure
+=================================================================
+==1008926==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f3ffffff820 at pc 0x5566998e821f bp 0x7ffe9b6ffcb0 sp 0x7ffe9b6ffca0
+READ of size 4 at 0x7f3ffffff820 thread T0
+    #0 0x5566998e821e in clear_cache() src/test.cpp:25
+    #1 0x5566998e8f76 in main src/test.cpp:118
+    #2 0x7f42abbfc082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5566998e7bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f3ffffff820 is located 32 bytes to the right of 1073741824-byte region [0x7f3fbffff800,0x7f3ffffff800)
+allocated by thread T0 here:
+    #0 0x7f42ac62e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5566998e80cd in clear_cache() src/test.cpp:19
+    #2 0x5566998e8f76 in main src/test.cpp:118
+    #3 0x7f42abbfc082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe87fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe87fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe87fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe87fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe87fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe87fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe87fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe87fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe87fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe87fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe87fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+timeout return 0
+
+
+citest_20
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9d67
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 184, rand_set_count: 2
+
+post_failure
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1009067==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x55c6e2105c21 bp 0x7ffc9ee3c670 sp 0x7ffc9ee3c570 T0)
+==1009067==The signal is caused by a READ memory access.
+==1009067==Hint: address points to the zero page.
+    #0 0x55c6e2105c21 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:478
+    #1 0x55c6e20fc96f in main src/test.cpp:74
+    #2 0x7f17a1671082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55c6e20fbbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:478 in CCEH::Recovery(pmemobjpool*)
+==1009067==ABORTING
+
+timeout return 0
+
+
+citest_21
+pre-failure
+=================================================================
+==1009130==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fb1fffff808 at pc 0x55e69ffc621f bp 0x7ffea4337b50 sp 0x7ffea4337b40
+READ of size 4 at 0x7fb1fffff808 thread T0
+    #0 0x55e69ffc621e in clear_cache() src/test.cpp:25
+    #1 0x55e69ffc6bf5 in main src/test.cpp:104
+    #2 0x7fb7560aa082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55e69ffc5bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fb1fffff808 is located 8 bytes to the right of 1073741824-byte region [0x7fb1bffff800,0x7fb1fffff800)
+allocated by thread T0 here:
+    #0 0x7fb756adc357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55e69ffc60cd in clear_cache() src/test.cpp:19
+    #2 0x55e69ffc6bf5 in main src/test.cpp:104
+    #3 0x7fb7560aa082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff6bfff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff6bfff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff6bfff7f00: fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff6bfff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xae60
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 229, rand_set_count: 16399
+
+post_failure
+=================================================================
+==1009185==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f6cd0402450 at pc 0x55ac7d1bae64 bp 0x7ffd6bcc6cb0 sp 0x7ffd6bcc6ca0
+READ of size 16 at 0x7f6cd0402450 thread T0
+    #0 0x55ac7d1bae63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55ac7d1b196f in main src/test.cpp:74
+    #2 0x7f6f1932d082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ac7d1b0bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7f6cd0402450 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0fee1a078430: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fee1a078440: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fee1a078450: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fee1a078460: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0fee1a078470: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0fee1a078480: fd fd fd fd fd fd fd fd fd fd[fa]fa 00 00 00 00
+  0x0fee1a078490: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fee1a0784a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fee1a0784b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fee1a0784c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fee1a0784d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1009185==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x55ac7d1bae9d bp 0x7ffd6bcc6dc0 sp 0x7ffd6bcc6cc0 T0)
+==1009185==The signal is caused by a READ memory access.
+    #0 0x55ac7d1bae9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x55ac7d1b196f in main src/test.cpp:74
+    #2 0x7f6f1932d082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55ac7d1b0bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1009185==ABORTING
+
+timeout return 0
+
+
+citest_22
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9b2d
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 182, rand_set_count: 1
+
+post_failure
+=================================================================
+==1009306==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fcebffff820 at pc 0x55f3ca15c21f bp 0x7ffc6cf7e5a0 sp 0x7ffc6cf7e590
+READ of size 4 at 0x7fcebffff820 thread T0
+    #0 0x55f3ca15c21e in clear_cache() src/test.cpp:25
+    #1 0x55f3ca15cf76 in main src/test.cpp:118
+    #2 0x7fd1510d5082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55f3ca15bbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fcebffff820 is located 32 bytes to the right of 1073741824-byte region [0x7fce7ffff800,0x7fcebffff800)
+allocated by thread T0 here:
+    #0 0x7fd151b07357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55f3ca15c0cd in clear_cache() src/test.cpp:19
+    #2 0x55f3ca15cf76 in main src/test.cpp:118
+    #3 0x7fd1510d5082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ffa57ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffa57ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffa57ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffa57ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffa57ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ffa57ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffa57ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffa57ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffa57ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffa57ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffa57ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1009306==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x55f3ca165076 bp 0x7ffc6cf7e5d0 sp 0x7ffc6cf7e420 T0)
+==1009306==The signal is caused by a READ memory access.
+==1009306==Hint: address points to the zero page.
+    #0 0x55f3ca165076 in CCEH::Get(unsigned long&) src/CCEH.cpp:413
+    #1 0x55f3ca15d073 in main src/test.cpp:123
+    #2 0x7fd1510d5082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55f3ca15bbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:413 in CCEH::Get(unsigned long&)
+==1009306==ABORTING
+
+timeout return 0
+
+
+citest_23
+pre-failure
+=================================================================
+==1009401==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f7c3ffff814 at pc 0x55e34f80321f bp 0x7fff83fddcf0 sp 0x7fff83fddce0
+READ of size 4 at 0x7f7c3ffff814 thread T0
+    #0 0x55e34f80321e in clear_cache() src/test.cpp:25
+    #1 0x55e34f803bf5 in main src/test.cpp:104
+    #2 0x7f81c09e5082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55e34f802bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f7c3ffff814 is located 20 bytes to the right of 1073741824-byte region [0x7f7bfffff800,0x7f7c3ffff800)
+allocated by thread T0 here:
+    #0 0x7f81c1417357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55e34f8030cd in clear_cache() src/test.cpp:19
+    #2 0x55e34f803bf5 in main src/test.cpp:104
+    #3 0x7f81c09e5082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff007ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff007ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff007ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff007ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff007ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff007ff7f00: fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff007ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff007ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff007ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff007ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff007ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0xafe9
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5d39
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 232, rand_set_count: 16418
+
+post_failure
+=================================================================
+==1009455==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f7cd0402450 at pc 0x56064c733e64 bp 0x7ffcd9cf8cc0 sp 0x7ffcd9cf8cb0
+READ of size 16 at 0x7f7cd0402450 thread T0
+    #0 0x56064c733e63 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x56064c72a96f in main src/test.cpp:74
+    #2 0x7f7f19f0d082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x56064c729bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+Address 0x7f7cd0402450 is a wild pointer.
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+Shadow bytes around the buggy address:
+  0x0ff01a078430: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff01a078440: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff01a078450: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff01a078460: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0ff01a078470: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+=>0x0ff01a078480: fd fd fd fd fd fd fd fd fd fd[fa]fa 00 00 00 00
+  0x0ff01a078490: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff01a0784a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff01a0784b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff01a0784c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff01a0784d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1009455==ERROR: AddressSanitizer: SEGV on unknown address 0x000000004008 (pc 0x56064c733e9d bp 0x7ffcd9cf8dd0 sp 0x7ffcd9cf8cd0 T0)
+==1009455==The signal is caused by a READ memory access.
+    #0 0x56064c733e9d in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x56064c72a96f in main src/test.cpp:74
+    #2 0x7f7f19f0d082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x56064c729bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:487 in CCEH::Recovery(pmemobjpool*)
+==1009455==ABORTING
+
+timeout return 0
+
+
+citest_24
+pre-failure
+=================================================================
+==1009530==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f60fffff808 at pc 0x55d95c4bb21f bp 0x7ffec4fc9190 sp 0x7ffec4fc9180
+READ of size 4 at 0x7f60fffff808 thread T0
+    #0 0x55d95c4bb21e in clear_cache() src/test.cpp:25
+    #1 0x55d95c4bbbf5 in main src/test.cpp:104
+    #2 0x7f6653eb0082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55d95c4babad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f60fffff808 is located 8 bytes to the right of 1073741824-byte region [0x7f60bffff800,0x7f60fffff800)
+allocated by thread T0 here:
+    #0 0x7f66548e2357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55d95c4bb0cd in clear_cache() src/test.cpp:19
+    #2 0x55d95c4bbbf5 in main src/test.cpp:104
+    #3 0x7f6653eb0082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fec9fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec9fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec9fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec9fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fec9fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fec9fff7f00: fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec9fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec9fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec9fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec9fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fec9fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x656b
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/test.cpp, line: 205, rand_set_count: 16427
+
+post_failure
+=================================================================
+==1009584==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fe17ffff820 at pc 0x55aec18d621f bp 0x7ffc5631b9b0 sp 0x7ffc5631b9a0
+READ of size 4 at 0x7fe17ffff820 thread T0
+    #0 0x55aec18d621e in clear_cache() src/test.cpp:25
+    #1 0x55aec18d6f76 in main src/test.cpp:118
+    #2 0x7fe44096c082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55aec18d5bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fe17ffff820 is located 32 bytes to the right of 1073741824-byte region [0x7fe13ffff800,0x7fe17ffff800)
+allocated by thread T0 here:
+    #0 0x7fe44139e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55aec18d60cd in clear_cache() src/test.cpp:19
+    #2 0x55aec18d6f76 in main src/test.cpp:118
+    #3 0x7fe44096c082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ffcafff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffcafff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffcafff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffcafff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffcafff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ffcafff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffcafff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffcafff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffcafff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffcafff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffcafff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009584==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7fe44139e357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55aec18d69f0 in main src/test.cpp:85
+    #2 0x7fe44096c082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_25
+pre-failure
+=================================================================
+==1009684==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f587ffff810 at pc 0x55e13836f21f bp 0x7ffe2331de10 sp 0x7ffe2331de00
+READ of size 4 at 0x7f587ffff810 thread T0
+    #0 0x55e13836f21e in clear_cache() src/test.cpp:25
+    #1 0x55e13836fbf5 in main src/test.cpp:104
+    #2 0x7f5decc56082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55e13836ebad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f587ffff810 is located 16 bytes to the right of 1073741824-byte region [0x7f583ffff800,0x7f587ffff800)
+allocated by thread T0 here:
+    #0 0x7f5ded688357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55e13836f0cd in clear_cache() src/test.cpp:19
+    #2 0x55e13836fbf5 in main src/test.cpp:104
+    #3 0x7f5decc56082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0feb8fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feb8fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feb8fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feb8fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0feb8fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0feb8fff7f00: fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feb8fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feb8fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feb8fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feb8fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0feb8fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009684==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f5ded688357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55e13836f9f0 in main src/test.cpp:85
+    #2 0x7f5decc56082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1009709==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fdffffff820 at pc 0x56010a46d21f bp 0x7ffff27a6ee0 sp 0x7ffff27a6ed0
+READ of size 4 at 0x7fdffffff820 thread T0
+    #0 0x56010a46d21e in clear_cache() src/test.cpp:25
+    #1 0x56010a46df76 in main src/test.cpp:118
+    #2 0x7fe28c0ed082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x56010a46cbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fdffffff820 is located 32 bytes to the right of 1073741824-byte region [0x7fdfbffff800,0x7fdffffff800)
+allocated by thread T0 here:
+    #0 0x7fe28cb1f357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x56010a46d0cd in clear_cache() src/test.cpp:19
+    #2 0x56010a46df76 in main src/test.cpp:118
+    #3 0x7fe28c0ed082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ffc7fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffc7fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffc7fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffc7fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ffc7fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ffc7fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffc7fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffc7fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffc7fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffc7fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ffc7fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009709==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7fe28cb1f357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x56010a46d9f0 in main src/test.cpp:85
+    #2 0x7fe28c0ed082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_26
+pre-failure
+=================================================================
+==1009810==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f46fffff83c at pc 0x55c9da26421f bp 0x7fff8a6de0d0 sp 0x7fff8a6de0c0
+READ of size 4 at 0x7f46fffff83c thread T0
+    #0 0x55c9da26421e in clear_cache() src/test.cpp:25
+    #1 0x55c9da264bf5 in main src/test.cpp:104
+    #2 0x7f4c708c8082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55c9da263bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f46fffff83c is located 60 bytes to the right of 1073741824-byte region [0x7f46bffff800,0x7f46fffff800)
+allocated by thread T0 here:
+    #0 0x7f4c712fa357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55c9da2640cd in clear_cache() src/test.cpp:19
+    #2 0x55c9da264bf5 in main src/test.cpp:104
+    #3 0x7f4c708c8082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe95fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe95fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe95fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe95fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe95fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe95fff7f00: fa fa fa fa fa fa fa[fa]fa fa fa fa fa fa fa fa
+  0x0fe95fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe95fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe95fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe95fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe95fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009810==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f4c712fa357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55c9da2649f0 in main src/test.cpp:85
+    #2 0x7f4c708c8082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1009833==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7ff6bffff820 at pc 0x55615eecb21f bp 0x7ffe031d3ec0 sp 0x7ffe031d3eb0
+READ of size 4 at 0x7ff6bffff820 thread T0
+    #0 0x55615eecb21e in clear_cache() src/test.cpp:25
+    #1 0x55615eecbf76 in main src/test.cpp:118
+    #2 0x7ff95a9d7082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55615eecabad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7ff6bffff820 is located 32 bytes to the right of 1073741824-byte region [0x7ff67ffff800,0x7ff6bffff800)
+allocated by thread T0 here:
+    #0 0x7ff95b409357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55615eecb0cd in clear_cache() src/test.cpp:19
+    #2 0x55615eecbf76 in main src/test.cpp:118
+    #3 0x7ff95a9d7082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fff57ff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fff57ff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fff57ff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fff57ff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fff57ff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fff57ff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fff57ff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fff57ff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fff57ff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fff57ff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fff57ff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009833==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7ff95b409357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55615eecb9f0 in main src/test.cpp:85
+    #2 0x7ff95a9d7082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_27
+pre-failure
+=================================================================
+==1009933==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f0b7ffff82c at pc 0x5570c218821f bp 0x7ffd90cb7f90 sp 0x7ffd90cb7f80
+READ of size 4 at 0x7f0b7ffff82c thread T0
+    #0 0x5570c218821e in clear_cache() src/test.cpp:25
+    #1 0x5570c2188bf5 in main src/test.cpp:104
+    #2 0x7f10fe9fd082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5570c2187bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f0b7ffff82c is located 44 bytes to the right of 1073741824-byte region [0x7f0b3ffff800,0x7f0b7ffff800)
+allocated by thread T0 here:
+    #0 0x7f10ff42f357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5570c21880cd in clear_cache() src/test.cpp:19
+    #2 0x5570c2188bf5 in main src/test.cpp:104
+    #3 0x7f10fe9fd082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe1efff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe1efff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe1efff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe1efff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe1efff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe1efff7f00: fa fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa
+  0x0fe1efff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe1efff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe1efff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe1efff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe1efff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009933==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f10ff42f357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5570c21889f0 in main src/test.cpp:85
+    #2 0x7f10fe9fd082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1009957==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7fc5fffff820 at pc 0x5599567f721f bp 0x7ffc1cb09d50 sp 0x7ffc1cb09d40
+READ of size 4 at 0x7fc5fffff820 thread T0
+    #0 0x5599567f721e in clear_cache() src/test.cpp:25
+    #1 0x5599567f7f76 in main src/test.cpp:118
+    #2 0x7fc88bd1f082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5599567f6bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7fc5fffff820 is located 32 bytes to the right of 1073741824-byte region [0x7fc5bffff800,0x7fc5fffff800)
+allocated by thread T0 here:
+    #0 0x7fc88c751357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5599567f70cd in clear_cache() src/test.cpp:19
+    #2 0x5599567f7f76 in main src/test.cpp:118
+    #3 0x7fc88bd1f082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0ff93fff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff93fff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff93fff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff93fff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0ff93fff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0ff93fff7f00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff93fff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff93fff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff93fff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff93fff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0ff93fff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1009957==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7fc88c751357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x5599567f79f0 in main src/test.cpp:85
+    #2 0x7fc88bd1f082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_28
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9e38
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 187, rand_set_count: 10137
+
+post_failure
+
+timeout return 0
+
+
+citest_29
+pre-failure
+=================================================================
+==1010230==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f39fffff808 at pc 0x55dad295d21f bp 0x7ffd8f212520 sp 0x7ffd8f212510
+READ of size 4 at 0x7f39fffff808 thread T0
+    #0 0x55dad295d21e in clear_cache() src/test.cpp:25
+    #1 0x55dad295dbf5 in main src/test.cpp:104
+    #2 0x7f3f5a686082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55dad295cbad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f39fffff808 is located 8 bytes to the right of 1073741824-byte region [0x7f39bffff800,0x7f39fffff800)
+allocated by thread T0 here:
+    #0 0x7f3f5b0b8357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55dad295d0cd in clear_cache() src/test.cpp:19
+    #2 0x55dad295dbf5 in main src/test.cpp:104
+    #3 0x7f3f5a686082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe7bfff7eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe7bfff7ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe7bfff7ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe7bfff7ee0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe7bfff7ef0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe7bfff7f00: fa[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe7bfff7f10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe7bfff7f20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe7bfff7f30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe7bfff7f40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe7bfff7f50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1010230==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3f5b0b8357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55dad295d9f0 in main src/test.cpp:85
+    #2 0x7f3f5a686082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+post_failure
+=================================================================
+==1010270==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x7f3d3f4bd820 at pc 0x55a156e1121f bp 0x7fffade57080 sp 0x7fffade57070
+READ of size 4 at 0x7f3d3f4bd820 thread T0
+    #0 0x55a156e1121e in clear_cache() src/test.cpp:25
+    #1 0x55a156e11f76 in main src/test.cpp:118
+    #2 0x7f3fc4cf0082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x55a156e10bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+0x7f3d3f4bd820 is located 32 bytes to the right of 1073741824-byte region [0x7f3cff4bd800,0x7f3d3f4bd800)
+allocated by thread T0 here:
+    #0 0x7f3fc5722357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55a156e110cd in clear_cache() src/test.cpp:19
+    #2 0x55a156e11f76 in main src/test.cpp:118
+    #3 0x7f3fc4cf0082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow src/test.cpp:25 in clear_cache()
+Shadow bytes around the buggy address:
+  0x0fe827e8fab0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe827e8fac0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe827e8fad0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe827e8fae0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0fe827e8faf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0fe827e8fb00: fa fa fa fa[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe827e8fb10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe827e8fb20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe827e8fb30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe827e8fb40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0fe827e8fb50: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+
+=================================================================
+==1010270==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x7f3fc5722357 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x55a156e119f0 in main src/test.cpp:85
+    #2 0x7f3fc4cf0082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 160 byte(s) leaked in 1 allocation(s).
+
+timeout return 0
+
+
+citest_30
+pre-failure
+stack:
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x9d67
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x5743
+/lib/x86_64-linux-gnu/libc.so.6_++0x24083
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh_++0x4bae
+
+set abortflag file: src/CCEH.cpp, line: 184, rand_set_count: 2
+
+post_failure
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==1010428==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x5581cd54fc21 bp 0x7ffd9b0be9e0 sp 0x7ffd9b0be8e0 T0)
+==1010428==The signal is caused by a READ memory access.
+==1010428==Hint: address points to the zero page.
+    #0 0x5581cd54fc21 in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:478
+    #1 0x5581cd54696f in main src/test.cpp:74
+    #2 0x7f1f2ceb3082 in __libc_start_main ../csu/libc-start.c:308
+    #3 0x5581cd545bad in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV src/CCEH.cpp:478 in CCEH::Recovery(pmemobjpool*)
+==1010428==ABORTING
+
+timeout return 0
+
+

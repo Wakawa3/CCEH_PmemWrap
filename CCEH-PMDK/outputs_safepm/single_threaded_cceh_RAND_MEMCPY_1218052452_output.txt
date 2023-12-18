@@ -1,0 +1,431 @@
+
+citest_1
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+173	usec	115190	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+211	usec	94389	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_2
+pre-failure
+
+post_failure
+
+
+
+citest_3
+pre-failure
+
+post_failure
+
+
+
+citest_4
+pre-failure
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+
+
+
+citest_5
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+
+
+
+citest_6
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+
+
+
+citest_7
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1840	usec	10867	Ops/sec	Insertion
+Start Searching
+41	usec	484883	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+222	usec	89780	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_8
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1845	usec	10838	Ops/sec	Insertion
+Start Searching
+40	usec	491086	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+210	usec	95094	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_9
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1859	usec	10756	Ops/sec	Insertion
+Start Searching
+40	usec	498144	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+215	usec	92811	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_10
+pre-failure
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+
+
+
+citest_11
+pre-failure
+
+post_failure
+
+
+
+citest_12
+pre-failure
+
+post_failure
+
+
+
+citest_13
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+
+
+
+citest_14
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+231	usec	86379	Ops/sec	Search
+Failed Search: 5
+Utilization: 0 %
+destructor
+
+
+
+citest_15
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1853	usec	10791	Ops/sec	Insertion
+Start Searching
+40	usec	496376	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+
+post_failure
+
+
+
+citest_16
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1874	usec	10671	Ops/sec	Insertion
+Start Searching
+54	usec	363828	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+220	usec	90592	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_17
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1849	usec	10813	Ops/sec	Insertion
+Start Searching
+47	usec	422573	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+218	usec	91500	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_18
+pre-failure
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+
+
+
+citest_19
+pre-failure
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+
+
+
+citest_20
+pre-failure
+
+post_failure
+
+
+
+citest_21
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+
+
+
+citest_22
+pre-failure
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+
+
+
+citest_23
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+
+post_failure
+
+
+
+citest_24
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1852	usec	10797	Ops/sec	Insertion
+Start Searching
+40	usec	488866	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+216	usec	92277	Ops/sec	Search
+Failed Search: 0
+Utilization: 0 %
+destructor
+
+
+
+citest_25
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1862	usec	10739	Ops/sec	Insertion
+Start Searching
+40	usec	498591	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+214	usec	93433	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_26
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1843	usec	10851	Ops/sec	Insertion
+Start Searching
+40	usec	491629	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+217	usec	92001	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_27
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1854	usec	10784	Ops/sec	Insertion
+Start Searching
+39	usec	508155	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+213	usec	93487	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_28
+pre-failure
+
+post_failure
+
+
+
+citest_29
+pre-failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Insertion
+1864	usec	10729	Ops/sec	Insertion
+Start Searching
+40	usec	496993	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+post_failure
+Params: numData(20)
+/home/satoshi/workloads/CCEH/CCEH-PMDK/input_rand.txt is used.
+Start Searching
+214	usec	93369	Ops/sec	Search
+Failed Search: 0
+Utilization: 0.000119209 %
+destructor
+
+
+
+citest_30
+pre-failure
+
+post_failure
+
+
+

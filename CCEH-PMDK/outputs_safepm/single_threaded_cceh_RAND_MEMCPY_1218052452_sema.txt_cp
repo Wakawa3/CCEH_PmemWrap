@@ -1,0 +1,409 @@
+pre_failure
+{'line': 205, 'source': 'src/test.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:118
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 32 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:118
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 232, 'source': 'src/CCEH.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 12 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 229, 'source': 'src/CCEH.cpp'}, {'line': 205, 'source': 'src/test.cpp'}, {'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 8 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 16 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in main src/test.cpp:85
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, {'line': 229, 'source': 'src/CCEH.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 4 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 60 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 232, 'source': 'src/CCEH.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 56 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 205, 'source': 'src/test.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 40 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 0 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 96 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 232, 'source': 'src/CCEH.cpp'}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 20 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': -1, 'source': ''}, 
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:104
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 44 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:104
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+|||||||||||||||||||||||||||||||||||||||||||
+post_failure
+{'line': 205, 'source': 'src/test.cpp'}
+{'line': 187, 'source': 'src/CCEH.cpp'}
+{'line': -1, 'source': ''}
+{'line': 182, 'source': 'src/CCEH.cpp'}
+{'line': 232, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:206    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_1
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:187    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_2
+
+stack_3
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:182    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_4
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:234 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 4 at 0x____________ thread T0
+    #0 0x____________ in clear_cache() src/test.cpp:25
+    #1 0x____________ in main src/test.cpp:118
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+0x____________ is located 32 bytes to the right of 1073741824-byte region [0x____________,0x____________)
+allocated by thread T0 here:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in clear_cache() src/test.cpp:19
+    #2 0x____________ in main src/test.cpp:118
+    #3 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 205, 'source': 'src/test.cpp'}
+{'line': -1, 'source': ''}
+{'line': 232, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:206    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_1
+
+stack_2
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:234 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+
+Direct leak of 160 byte(s) in 1 object(s) allocated from:
+    #0 0x____________ in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:102
+    #1 0x____________ in main src/test.cpp:85
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+
+{'line': 182, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:182    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==The signal is caused by a READ memory access.
+==______==Hint: address points to the zero page.
+    #0 0x____________ in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:476
+    #1 0x____________ in main src/test.cpp:74
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+{'line': 184, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:184 (discriminator 1)    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==The signal is caused by a READ memory access.
+==______==Hint: address points to the zero page.
+    #0 0x____________ in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:478
+    #1 0x____________ in main src/test.cpp:74
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+{'line': 229, 'source': 'src/CCEH.cpp'}
+{'line': 205, 'source': 'src/test.cpp'}
+{'line': 232, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:230 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_1
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:206    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_2
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:234 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 16 at 0x____________ thread T0
+    #0 0x____________ in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x____________ in main src/test.cpp:74
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+{'line': 229, 'source': 'src/CCEH.cpp'}
+{'line': 187, 'source': 'src/CCEH.cpp'}
+{'line': 205, 'source': 'src/test.cpp'}
+{'line': 232, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:230 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_1
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:187    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_2
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:206    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_3
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:234 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==ERROR: AddressSanitizer: SEGV on unknown address 0x____________ (pc 0x____________ bp 0x____________ sp 0x____________ T0)
+==______==The signal is caused by a READ memory access.
+    #0 0x____________ in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x____________ in main src/test.cpp:74
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+{'line': 182, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:182    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==The signal is caused by a READ memory access.
+==______==Hint: address points to the zero page.
+    #0 0x____________ in CCEH::Get(unsigned long&) src/CCEH.cpp:413
+    #1 0x____________ in main src/test.cpp:123
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+
+{'line': 187, 'source': 'src/CCEH.cpp'}
+{'line': 229, 'source': 'src/CCEH.cpp'}
+stack_0
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:187    _ZN4CCEH8initCCEHEP11pmemobjpoolm
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:59 (discriminator 1)    main
+??:?    __libc_start_main
+??:?    _start
+
+stack_1
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/CCEH.cpp:230 (discriminator 1)    _ZN4CCEH6InsertEP11pmemobjpoolRmPKc
+/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/src/test.cpp:106 (discriminator 2)    main
+??:?    __libc_start_main
+??:?    _start
+
+
+=================================================================
+==______==ERROR: AddressSanitizer: heap-use-after-free on address 0x____________ at pc 0x____________ bp 0x____________ sp 0x____________
+READ of size 16 at 0x____________ thread T0
+    #0 0x____________ in CCEH::Recovery(pmemobjpool*) src/CCEH.cpp:487
+    #1 0x____________ in main src/test.cpp:74
+    #2 0x____________ in __libc_start_main ../csu/libc-start.c:308
+    #3 0x____________ in _start (/home/satoshi/mnt/kssd/workloads/CCEH/CCEH-PMDK/bin/single_threaded_cceh+0x4bad)
+

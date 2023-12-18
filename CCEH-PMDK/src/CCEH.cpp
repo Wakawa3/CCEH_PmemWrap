@@ -471,19 +471,19 @@ RETRY:
 
 void CCEH::Recovery(PMEMobjpool* pop){
     size_t i = 0;
-	fprintf(stderr, "Recovery\n");
+	// fprintf(stderr, "Recovery\n");
 	//fprintf(stderr, "___offset: %lx\n", (size_t)&(D_RO(D_RO(D_RO(dir)->segment)[30])->local_depth) - (size_t)pop);
     while(i < D_RO(dir)->capacity){
-		fprintf(stderr, "Recovery1\n");
+		// fprintf(stderr, "Recovery1\n");
 		size_t depth_cur = D_RO(D_RO(D_RO(dir)->segment)[i])->local_depth;
-		fprintf(stderr, "Recovery2, depth_cur: %ld\n", depth_cur);
+		// fprintf(stderr, "Recovery2, depth_cur: %ld\n", depth_cur);
 		size_t stride = pow(2, D_RO(dir)->depth - depth_cur);
 		size_t buddy = i + stride;
-		fprintf(stderr, "Recovery3, stride: %ld, capacity: %ld, buddy: %ld\n", stride, D_RO(dir)->capacity, buddy);
+		// fprintf(stderr, "Recovery3, stride: %ld, capacity: %ld, buddy: %ld\n", stride, D_RO(dir)->capacity, buddy);
 		if(buddy == D_RO(dir)->capacity) break;
-		fprintf(stderr, "Recovery4\n");
+		// fprintf(stderr, "Recovery4\n");
 		for(int j=buddy-1; i<j; j--){
-			fprintf(stderr, "Recovery5\n");
+			// fprintf(stderr, "Recovery5\n");
 			if(D_RO(D_RO(D_RO(dir)->segment)[j])->local_depth != depth_cur){
 				// fprintf(stderr, "Recovery6\n");
 				D_RW(D_RW(dir)->segment)[j] = D_RO(D_RO(dir)->segment)[i];

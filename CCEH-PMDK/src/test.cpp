@@ -49,7 +49,7 @@ int main (int argc, char* argv[])
     TOID(CCEH) HashTable = OID_NULL;
 
     if(access(path, 0) != 0){
-		fprintf(stderr, "create\n");
+		// fprintf(stderr, "create\n");
 		pop = pmemobj_create(path, "CCEH", POOL_SIZE, 0666);
 		if(!pop){
 			perror("pmemoj_create");
@@ -60,20 +60,20 @@ int main (int argc, char* argv[])
 		//pmem_persist(pop, POOL_SIZE);
 	}
     else{
-		fprintf(stderr, "open\n");
+		// fprintf(stderr, "open\n");
 		pop = pmemobj_open(path, "CCEH");
 		if(pop == NULL){
 			perror("pmemobj_open");
 			exit(1);
 		}
-		fprintf(stderr, "open1\n");
+		// fprintf(stderr, "open1\n");
 		HashTable = POBJ_ROOT(pop, CCEH);
-		fprintf(stderr, "open2\n");
+		// fprintf(stderr, "open2\n");
 		if(D_RO(HashTable)->crashed){
-			fprintf(stderr, "open3\n");
+			// fprintf(stderr, "open3\n");
 			D_RW(HashTable)->Recovery(pop);
 		}
-		fprintf(stderr, "open4\n");
+		// fprintf(stderr, "open4\n");
 		exists = true;
     }
 
@@ -119,7 +119,7 @@ int main (int argc, char* argv[])
 	int failedSearch = 0;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	for(int i=0; i<numData; i++){
-		fprintf(stderr, "i: %d\n", i);
+		// fprintf(stderr, "i: %d\n", i);
 	    auto ret = D_RW(HashTable)->Get(keys[i]);
 	    if(ret != reinterpret_cast<Value_t>(keys[i])){
 		failedSearch++;

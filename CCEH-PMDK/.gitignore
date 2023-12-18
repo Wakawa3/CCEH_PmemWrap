@@ -1,3 +1,5 @@
 bin/
 outputs/
-outputs_safepm/
+outputs_safepm_old/
+backtrace.txt
+countfile*.txt
